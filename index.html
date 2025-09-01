@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>앱 다운로드</title>
+<script type="text/javascript">
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // 본인의 앱 주소로 변경
+    const iosAppUrl = "https://apps.apple.com/kr/app/your-app-id"; 
+    const androidAppUrl = "https://play.google.com/store/apps/details?id=your.app.id";
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.replace(iosAppUrl);
+    } else {
+        window.location.replace(androidAppUrl);
+    }
+</script>
+</head>
+<body>
+    <p>앱 스토어로 이동 중입니다...</p>
+</body>
+</html>
