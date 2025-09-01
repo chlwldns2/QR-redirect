@@ -3,15 +3,19 @@
 <head>
 <title>앱 다운로드</title>
 <script type="text/javascript">
+    // 사용자 기기 정보를 담고 있는 User Agent 문자열을 가져옵니다.
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    // 본인의 앱 주소로 변경
-    const iosAppUrl = "https://apps.apple.com/kr/app/your-app-id"; 
-    const androidAppUrl = "https://play.google.com/store/apps/details?id=your.app.id";
+    // 앱 스토어 URL (본인의 앱 주소로 변경하세요)
+    const iosAppUrl = "https://apps.apple.com/kr/app/%EB%AA%A8%EB%91%90%EB%B6%80%EA%B3%A0/id6747795368"; // 예: 인스타그램 iOS
+    const androidAppUrl = "https://play.google.com/store/apps/details?id=com.modubugo_mobile&pcampaignid=web_share"; // 예: 인스타그램 Android
 
+    // iOS 기기 (아이폰, 아이패드, 아이팟)인지 확인합니다.
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         window.location.replace(iosAppUrl);
-    } else {
+    } 
+    // 그 외의 경우 (대부분 안드로이드) 안드로이드 마켓으로 보냅니다.
+    else {
         window.location.replace(androidAppUrl);
     }
 </script>
